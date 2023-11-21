@@ -4,7 +4,7 @@ import { Navlink } from "./Navlink";
 export const NavBar = () => {
   const navigate = useNavigate();
   const handleLogout = () => {
-    console.log("logout");
+    navigate("/login", { replace: true });
   };
   return (
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">

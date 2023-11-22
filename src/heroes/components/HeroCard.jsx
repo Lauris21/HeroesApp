@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 export const HeroCard = ({
   id,
   superhero,
-  publisher,
   alter_ego,
   first_appearance,
   characters,
@@ -27,7 +26,7 @@ export const HeroCard = ({
               <p className="card-text">
                 <small className="text-muted">{first_appearance}</small>
               </p>
-              <Link to={`/hero/${id}`}>Mas...</Link>
+              <Link to={`/hero/${id}`}>Info</Link>
             </div>
           </div>
         </div>
@@ -39,7 +38,7 @@ export const HeroCard = ({
 HeroCard.propTypes = {
   id: PropTypes.string.isRequired,
   superhero: PropTypes.string.isRequired,
-  publisher: PropTypes.string.isRequired,
+  //   publisher: PropTypes.string.isRequired,
   alter_ego: PropTypes.string.isRequired,
   first_appearance: PropTypes.string.isRequired,
   characters: PropTypes.string.isRequired,

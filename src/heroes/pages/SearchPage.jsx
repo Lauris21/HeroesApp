@@ -18,9 +18,6 @@ export const SearchPage = () => {
 
   const onSearchSumbit = (event) => {
     event.preventDefault();
-    if (searchText.trim().length < 1) {
-      return;
-    }
     navigate(`?q=${searchText.toLowerCase().trim()}`);
   };
   return (
@@ -45,10 +42,18 @@ export const SearchPage = () => {
         </div>
         <div className="col-7">
           <h4 className="mt-3">Results</h4>
-          <div className="alert alert-primary mt-3">Search a hero</div>
-          <div className="alert alert-danger mt-3">
-            Not find hero with <b>{q}</b>
-          </div>
+          {q === "" ? (
+            <div className="alert alert-primary mt-3 animate__animated animate__fadeIn">
+              Search a hero
+            </div>
+          ) : (
+            heroes.length === 0 && (
+              <div className="alert alert-danger mt-3 animate__animated animate__fadeIn">
+                Not find hero with <b>{q}</b>
+              </div>
+            )
+          )}
+
           {heroes.map((hero) => (
             <HeroCard key={hero.id} {...hero} />
           ))}

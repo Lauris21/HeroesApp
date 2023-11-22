@@ -10,8 +10,9 @@ export const HeroPage = () => {
   const navigate = useNavigate();
 
   const onNavigateBack = () => {
-    const publisherSplit = hero.publisher.split(" ")[0].toLowerCase();
-    navigate(`/${publisherSplit}`);
+    // const publisherSplit = hero.publisher.split(" ")[0].toLowerCase();
+    // navigate(`/${publisherSplit}`);
+    navigate(-1);
   };
 
   if (!hero) {

@@ -18,7 +18,7 @@ export const SearchPage = () => {
 
   const onSearchSumbit = (event) => {
     event.preventDefault();
-    navigate(`?q=${searchText.toLowerCase().trim()}`);
+    navigate(`?q=${searchText}`);
   };
   return (
     <>

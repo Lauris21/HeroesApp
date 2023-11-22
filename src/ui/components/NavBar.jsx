@@ -15,6 +15,7 @@ export const NavBar = () => {
         <div className="navbar-nav">
           <Navlink text="Marvel" path="marvel" />
           <Navlink text="DC" path="dc" />
+          <Navlink text="Search" path="search" />
         </div>
       </div>
       <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">

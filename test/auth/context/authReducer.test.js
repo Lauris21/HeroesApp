@@ -1,4 +1,4 @@
-import { authReducer } from "../../../src/auth/context/authReducer";
+import { authReducer, types } from "../../../src/auth";
 
 describe("Pruebas en authReducer", () => {
   const initialState = {
@@ -21,7 +21,7 @@ describe("Pruebas en authReducer", () => {
     };
 
     const action = {
-      type: "[Auth] Login",
+      type: types.login,
       payload: user,
     };
 
@@ -32,12 +32,22 @@ describe("Pruebas en authReducer", () => {
   });
 
   test("Debe el logout borrar el name del usuario y logged en false", () => {
-    const action = {
-      type: "[Auth] Logout",
+    const state = {
+      logged: true,
+      user: {
+        id: "123",
+        name: "Laura",
+      },
     };
 
-    const newState = authReducer(initialState, action);
+    const action = {
+      type: types.logout,
+    };
+
+    const newState = authReducer(state, action);
 
     expect(newState.logged).toBeFalsy();
+
+    expect(newState.user).toBeUndefined();
   });
 });

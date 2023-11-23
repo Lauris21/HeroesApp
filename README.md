@@ -36,7 +36,7 @@ npm i -D whatwg-fetch
   "test": "jest --watchAll"
 ```
 
-4. Crear la configuración de babel **babel.config.js**
+4. Crear la configuración de babel **babel.config.cjs**
 
 ```
 module.exports = {
@@ -49,7 +49,7 @@ module.exports = {
 
 5. Opcional, pero eventualmente necesario, crear Jest config y setup:
 
-**jest.config.js**
+**jest.config.cjs**
 
 ```
 module.exports = {
@@ -58,7 +58,7 @@ module.exports = {
 }
 ```
 
-**jest.setup.js**
+**jest.setup.cjs**
 
 ```
 // En caso de necesitar la implementación del FetchAPI

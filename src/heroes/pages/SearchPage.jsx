@@ -1,5 +1,4 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import queryString from "query-string";
 import { useForm } from "../../hooks";
 import { getHeroesByName } from "../helpers";
 import { HeroCard } from "../components/HeroCard";
@@ -8,7 +7,7 @@ export const SearchPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { q = "" } = queryString.parse(location.search);
+  const q = location.search.split("=")[1] || "";
 
   const heroes = getHeroesByName(q);
 

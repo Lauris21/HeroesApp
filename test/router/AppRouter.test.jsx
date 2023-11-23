@@ -17,7 +17,7 @@ describe("Pruebas en <AppRoute/>", () => {
       </MemoryRouter>
     );
 
-    screen.debug();
+    expect(screen.getAllByText("Login").length).toBe(2);
   });
 
   test("Debe mostrar <Search/> si esta autenticado", () => {
@@ -36,5 +36,7 @@ describe("Pruebas en <AppRoute/>", () => {
         </AuthContext.Provider>
       </MemoryRouter>
     );
+
+    expect(screen.getAllByText("Search").length).toBeGreaterThanOrEqual(1);
   });
 });

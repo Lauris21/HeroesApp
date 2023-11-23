@@ -52,5 +52,6 @@ describe("Pruebas en <PrivateRoutes />", () => {
     );
 
     expect(screen.getByText("Ruta privada")).toBeTruthy();
+    expect(localStorage.setItem).toHaveBeenCalled();
   });
 });

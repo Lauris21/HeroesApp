@@ -25,7 +25,7 @@ export const SearchPage = () => {
       <div className="row">
         <div className="col-5">
           <h4 className="mt-3">Searching</h4>
-          <form onSubmit={onSearchSumbit}>
+          <form onSubmit={onSearchSumbit} aria-label="form">
             <input
               type="text"
               placeholder="search a hero"
@@ -47,7 +47,10 @@ export const SearchPage = () => {
             </div>
           ) : (
             heroes.length === 0 && (
-              <div className="alert alert-danger mt-3 animate__animated animate__fadeIn">
+              <div
+                className="alert alert-danger mt-3 animate__animated animate__fadeIn"
+                aria-label="alert"
+              >
                 Not find hero with <b>{q}</b>
               </div>
             )
